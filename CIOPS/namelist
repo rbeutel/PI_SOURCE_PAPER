@@ -1,0 +1,128 @@
+&ARIANE
+    key_alltracers =.TRUE.,
+    key_sequential =.TRUE.,
+    key_ascii_outputs =.TRUE.,
+    mode ='quantitative',
+    forback ='backward',
+    bin ='nobin',
+    init_final ='init',
+    nmax = 80000000,
+    tunit =3600.,
+    ntfic =1,
+    key_computesigma=.TRUE.,
+    zsigma=100.,
+/
+
+&SEQUENTIAL
+    maxcycles = 1,
+/
+
+&OPAPARAM
+    imt =714,
+    jmt =1020,
+    kmt =75,
+    lmt = 7968,
+    key_periodic =.FALSE.,
+    key_jfold =.FALSE.,
+    key_computew =.TRUE.,
+    key_vvl = .TRUE.,
+    key_partialsteps =.TRUE.,
+/
+
+&QUANTITATIVE
+  key_eco        = .FALSE.,
+  key_reducmem   = .TRUE.,
+  key_unitm3     = .TRUE.,
+  key_nointerpolstats = .FALSE.,
+  max_transport  = 5.e3,
+  lmin = 3601,
+  lmax = 7968,
+/
+
+
+&ZONALCRT
+    c_dir_zo ='Links',
+    c_prefix_zo ='CIOPS_1h_',
+    ind0_zo =01,
+    indn_zo =7969,
+    maxsize_zo =6,
+    c_suffix_zo ='_grid_U_new.nc',
+    nc_var_zo ='vozocrtx',
+    nc_var_eivu ='NONE',
+    nc_att_mask_zo ='NONE',
+/
+
+&MERIDCRT
+    c_dir_me ='Links',
+    c_prefix_me ='CIOPS_1h_'
+    ind0_me =01,
+    indn_me =7969,
+    maxsize_me =6,
+    c_suffix_me ='_grid_V_new.nc',
+    nc_var_me ='vomecrty',
+    nc_var_eivv ='NONE',
+    nc_att_mask_me ='NONE',
+/
+
+&VERTICRT
+  c_dir_ve     = 'NONE',
+  c_prefix_ve  = 'NONE',
+  ind0_ve      = -1,
+  indn_ve      = -1,
+  maxsize_ve   = -1,
+  c_suffix_ve  = 'NONE',
+  nc_var_ve    = 'NONE',
+  nc_var_eivw  = 'NONE',
+  nc_att_mask_ve = 'NONE',
+/
+
+&SSH
+	c_dir_ssh     = 'Links',
+	c_prefix_ssh  = 'CIOPS_1h_',
+	ind0_ssh      = 01,
+	indn_ssh      = 7969,
+	maxsize_ssh   = 6,
+	c_suffix_ssh  = '_grid_T.nc',
+	nc_var_ssh    = 'zos',
+	nc_att_mask_ssh = 'NONE',
+/
+
+&TEMPERAT
+  c_dir_te     = 'Links',
+  c_prefix_te  = 'CIOPS_1h_',
+  ind0_te      = 01,
+  indn_te      = 7969,
+  maxsize_te   = 6,
+  c_suffix_te  = '_grid_T_new.nc',
+  nc_var_te    = 'votemper',
+  nc_att_mask_te = 'NONE',
+/
+
+&SALINITY
+  c_dir_sa     = 'Links',
+  c_prefix_sa  = 'CIOPS_1h_',
+  ind0_sa      = 01,
+  indn_sa      = 7969,
+  maxsize_sa   = 6,
+  c_suffix_sa  = '_grid_S_new.nc',
+  nc_var_sa    = 'vosaline',
+  nc_att_mask_sa = 'NONE',
+/
+
+&MESH
+    dir_mesh ='/ocean/mdunphy/CIOPSW-BC12/grid/',
+    fn_mesh ='mesh_mask_Bathymetry_NEP36_714x1020_SRTM30v11_NOAA3sec_WCTSS_JdeFSalSea.nc',
+    nc_var_xx_tt ='glamt',
+    nc_var_xx_uu ='glamu',
+    nc_var_yy_tt ='gphit',
+    nc_var_yy_vv ='gphiv',
+    nc_var_zz_ww ='gdepw_0',
+    nc_var_e2u ='e2u',
+    nc_var_e1v ='e1v',
+    nc_var_e1t ='e1t',
+    nc_var_e2t ='e2t',
+    nc_var_e3t ='e3t_0',
+    nc_var_mbathy = 'mbathy',
+    nc_var_tmask ='tmask',
+    nc_mask_val =0.,
+/
